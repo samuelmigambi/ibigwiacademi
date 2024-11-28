@@ -37,7 +37,7 @@
   <meta name="twitter:creator" content="@IbigwiA35409">
 
   <!-- Title of the Page -->
-  <title>Courses | Ibigwi Creative Academy</title>
+  <title>Gallery | Ibigwi Creative Academy</title>
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -74,8 +74,8 @@
         <ul>
           <li><a href="index.html" >Home</a></li>
           <li><a href="index.html#about">About</a></li>
-          <li><a href="#features">Why Us</a></li>
-          <li class="dropdown"><a href="service-details.html" class="active"><span>Courses</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <li><a href="index.html#features">Why Us</a></li>
+          <li class="dropdown"><a href="service-details.html" ><span>Courses</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="service-details.html">Photography</a></li>
               <li><a href="service-details.html">Videography</a></li>
@@ -83,12 +83,12 @@
               <li><a href="service-details.html">Film Production</a></li>
             </ul>
           </li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="index.html#about">Get Started</a>
+      <a class="btn-getstarted" href="index.html#contact">Get Started</a>
 
     </div>
   </header>
@@ -113,96 +113,104 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Gallery</h2>
-        <p>Explore our collection of images and videos showcasing our work.</p>
+        <h2>Our Gallery</h2>
+        <p>Explore our collection of images and videos that capture our creative moments and projects.</p>
       </div><!-- End Section Title -->
 
-      <!-- Tabs for Switching Between Videos and Images -->
-      <div class="tabs-container" data-aos="fade-up">
-        <ul class="tabs">
-          <li class="tab active" onclick="showTab('images')">Images</li>
-          <li class="tab" onclick="showTab('videos')">Videos</li>
-        </ul>
-      </div><!-- End Tabs -->
+      <div class="container" data-aos="fade-up">
 
-      <!-- Content Section (Images and Videos) -->
-      <div class="container" id="gallery-content" data-aos="fade-up">
-        <!-- Images Tab -->
-        <div id="images" class="gallery-tab-content active">
-          <div class="gallery-grid">
-            <!-- Image Item -->
-            <div class="gallery-item">
-              <img src="assets/img/gallery1.jpg" alt="Gallery Image 1" class="img-fluid">
+        <!-- Tabs -->
+        <div class="gallery-tabs">
+          <ul class="tab-list">
+            <li class="active" onclick="showGallery('images')">Images</li>
+            <li onclick="showGallery('videos')">Videos</li>
+          </ul>
+        </div><!-- End Tabs -->
+
+        <!-- Tab Content -->
+        <div class="gallery-content">
+
+          <!-- Images Tab Content -->
+          <div id="images" class="gallery-tab-content">
+            <div id="images-container" class="staggered-view">
+              <!-- Images will be dynamically inserted here -->
             </div>
-            <div class="gallery-item">
-              <img src="assets/img/gallery2.jpg" alt="Gallery Image 2" class="img-fluid">
-            </div>
-            <div class="gallery-item">
-              <img src="assets/img/gallery3.jpg" alt="Gallery Image 3" class="img-fluid">
-            </div>
-            <div class="gallery-item">
-              <img src="assets/img/gallery4.jpg" alt="Gallery Image 4" class="img-fluid">
-            </div>
-            <!-- Add more images as needed -->
           </div>
-        </div><!-- End Images Tab -->
+          <!-- End Images Tab Content -->
 
-        <!-- Videos Tab -->
-        <div id="videos" class="gallery-tab-content" style="display:none;">
-          <div class="gallery-grid">
-            <!-- Video Item -->
-            <div class="gallery-item">
-              <video controls class="img-fluid">
-                <source src="assets/video/sample1.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+          <!-- Videos Tab Content -->
+          <div id="videos" class="gallery-tab-content">
+            <div id="videos-container" class="staggered-view">
+              <!-- Videos will be dynamically inserted here -->
             </div>
-            <div class="gallery-item">
-              <video controls class="img-fluid">
-                <source src="assets/video/sample2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div class="gallery-item">
-              <video controls class="img-fluid">
-                <source src="assets/video/sample3.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div class="gallery-item">
-              <video controls class="img-fluid">
-                <source src="assets/video/sample4.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <!-- Add more videos as needed -->
           </div>
-        </div><!-- End Videos Tab -->
-      </div><!-- End Gallery Content -->
+          <!-- End Videos Tab Content -->
 
-    </section><!-- End Gallery Section -->
 
-  </main><!-- End Main -->
+        </div><!-- End Tab Content -->
 
-  <script>
-    function showTab(tabName) {
-      // Hide both tabs
-      var tabs = document.querySelectorAll('.gallery-tab-content');
-      tabs.forEach(function(tab) {
-        tab.style.display = 'none';
-      });
+      </div><!-- End Container -->
 
-      // Remove 'active' class from all tabs
-      var tabLinks = document.querySelectorAll('.tab');
-      tabLinks.forEach(function(tabLink) {
-        tabLink.classList.remove('active');
-      });
+    </section><!-- /Gallery Section -->
 
-      // Show the clicked tab and add 'active' class to the clicked tab
-      document.getElementById(tabName).style.display = 'block';
-      document.querySelector('[onclick="showTab(\'' + tabName + '\')"]').classList.add('active');
-    }
-  </script>
+  </main>
+
+
+  <!-- Call To Action Section -->
+  <section id="call-to-action" class="call-to-action section">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row content justify-content-center align-items-center position-relative">
+        <div class="col-lg-8 mx-auto text-center">
+          <h2 class="display-4 mb-4">Join Ibigwi Creative Academy Today</h2>
+          <p class="mb-4">Unlock your potential in photography, videography, and creative arts. Enroll now to begin your journey to success with our expert instructors and state-of-the-art studios.</p>
+          <a href="index.html#contact" class="btn btn-cta">Get Started</a>
+        </div>
+
+        <!-- Abstract Background Elements -->
+        <div class="shape shape-1">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M47.1,-57.1C59.9,-45.6,68.5,-28.9,71.4,-10.9C74.2,7.1,71.3,26.3,61.5,41.1C51.7,55.9,35,66.2,16.9,69.2C-1.3,72.2,-21,67.8,-36.9,57.9C-52.8,48,-64.9,32.6,-69.1,15.1C-73.3,-2.4,-69.5,-22,-59.4,-37.1C-49.3,-52.2,-32.8,-62.9,-15.7,-64.9C1.5,-67,34.3,-68.5,47.1,-57.1Z" transform="translate(100 100)"></path>
+          </svg>
+        </div>
+
+        <div class="shape shape-2">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M41.3,-49.1C54.4,-39.3,66.6,-27.2,71.1,-12.1C75.6,3,72.4,20.9,63.3,34.4C54.2,47.9,39.2,56.9,23.2,62.3C7.1,67.7,-10,69.4,-24.8,64.1C-39.7,58.8,-52.3,46.5,-60.1,31.5C-67.9,16.4,-70.9,-1.4,-66.3,-16.6C-61.8,-31.8,-49.7,-44.3,-36.3,-54C-22.9,-63.7,-8.2,-70.6,3.6,-75.1C15.4,-79.6,28.2,-58.9,41.3,-49.1Z" transform="translate(100 100)"></path>
+          </svg>
+        </div>
+
+        <!-- Dot Pattern Groups -->
+        <div class="dots dots-1">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <pattern id="dot-pattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
+            </pattern>
+            <rect width="100" height="100" fill="url(#dot-pattern)"></rect>
+          </svg>
+        </div>
+
+        <div class="dots dots-2">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <pattern id="dot-pattern-2" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="2" fill="currentColor"></circle>
+            </pattern>
+            <rect width="100" height="100" fill="url(#dot-pattern-2)"></rect>
+          </svg>
+        </div>
+
+        <div class="shape shape-3">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <path d="M43.3,-57.1C57.4,-46.5,71.1,-32.6,75.3,-16.2C79.5,0.2,74.2,19.1,65.1,35.3C56,51.5,43.1,65,27.4,71.7C11.7,78.4,-6.8,78.3,-23.9,72.4C-41,66.5,-56.7,54.8,-65.4,39.2C-74.1,23.6,-75.8,4,-71.7,-13.2C-67.6,-30.4,-57.7,-45.2,-44.3,-56.1C-30.9,-67,-15.5,-74,0.7,-74.9C16.8,-75.8,33.7,-70.7,43.3,-57.1Z" transform="translate(100 100)"></path>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+
+  </section><!-- /Call To Action Section -->
+
 
 
   <footer id="footer" class="footer">
@@ -300,26 +308,84 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
 
-<!-- Add this script at the bottom of your HTML -->
-<script>
-  function showService(serviceNumber) {
-    // Hide all service content
-    var services = document.querySelectorAll('.service-tab-content');
-    services.forEach(function(service) {
-      service.style.display = 'none';
-    });
+  <!-- Add this script at the bottom of your HTML -->
+  <script>
+    function showService(serviceNumber) {
+      // Hide all service content
+      var services = document.querySelectorAll('.service-tab-content');
+      services.forEach(function(service) {
+        service.style.display = 'none';
+      });
 
-    // Remove the 'active' class from all links
-    var links = document.querySelectorAll('.services-list a');
-    links.forEach(function(link) {
-      link.classList.remove('active');
-    });
+      // Remove the 'active' class from all links
+      var links = document.querySelectorAll('.services-list a');
+      links.forEach(function(link) {
+        link.classList.remove('active');
+      });
 
-    // Show the clicked service content and add 'active' class to the clicked link
-    document.getElementById('serviceContent' + serviceNumber).style.display = 'block';
-    links[serviceNumber - 1].classList.add('active');
-  }
-</script>
+      // Show the clicked service content and add 'active' class to the clicked link
+      document.getElementById('serviceContent' + serviceNumber).style.display = 'block';
+      links[serviceNumber - 1].classList.add('active');
+    }
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Fetch images.json
+      fetch("images.json")
+              .then((response) => response.json())
+              .then((data) => {
+                const container = document.getElementById("images-container");
+
+                // Loop through each image in the JSON
+                data.images.forEach((image) => {
+                  // Create an image element
+                  const imgElement = document.createElement("img");
+                  imgElement.src = image.src;
+                  imgElement.alt = image.alt;
+                  imgElement.className = "gallery-image";
+
+                  // Append to container
+                  container.appendChild(imgElement);
+                });
+              })
+              .catch((error) => console.error("Error loading images:", error));
+    });
+  </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // Fetch videos.json
+      fetch("videos.json")
+              .then((response) => response.json())
+              .then((data) => {
+                const container = document.getElementById("videos-container");
+
+                // Loop through each video in the JSON
+                data.videos.forEach((video) => {
+                  // Create a div for the video embed
+                  const videoWrapper = document.createElement("div");
+                  videoWrapper.className = "video-wrapper";
+
+                  // Create the iframe for the YouTube video
+                  const iframe = document.createElement("iframe");
+                  iframe.src = video.url;
+                  iframe.title = video.title;
+                  iframe.frameBorder = "0";
+                  iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+                  iframe.allowFullscreen = true;
+
+                  // Append iframe to the wrapper
+                  videoWrapper.appendChild(iframe);
+
+                  // Append video wrapper to container
+                  container.appendChild(videoWrapper);
+                });
+              })
+              .catch((error) => console.error("Error loading videos:", error));
+    });
+  </script>
+
 
 </body>
 

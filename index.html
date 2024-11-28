@@ -76,8 +76,8 @@
       <nav id="navmenu" class="navmenu">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#features">Why Us</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#features">Why Us</a></li>
           <li class="dropdown"><a href="service-details.html" ><span>Courses</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="service-details.html">Photography</a></li>
@@ -86,12 +86,12 @@
               <li><a href="service-details.html">Film Production</a></li>
             </ul>
           </li>
-          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="gallery.html" >Gallery</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="index.html#about">Get Started</a>
+      <a class="btn-getstarted" href="index.html#contact">Get Started</a>
 
     </div>
   </header>
@@ -470,7 +470,7 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="display-4 mb-4">Join Ibigwi Creative Academy Today</h2>
             <p class="mb-4">Unlock your potential in photography, videography, and creative arts. Enroll now to begin your journey to success with our expert instructors and state-of-the-art studios.</p>
-            <a href="#" class="btn btn-cta">Get Started</a>
+            <a href="index.html#contact" class="btn btn-cta">Get Started</a>
           </div>
 
           <!-- Abstract Background Elements -->
@@ -854,7 +854,7 @@
           <div class="col-lg-8 mx-auto text-center">
             <h2 class="display-4 mb-4">Join Ibigwi Creative Academy Today</h2>
             <p class="mb-4">Unlock your potential in photography, videography, and creative arts. Enroll now to begin your journey to success with our expert instructors and state-of-the-art studios.</p>
-            <a href="#" class="btn btn-cta">Get Started</a>
+            <a href="index.html#contact" class="btn btn-cta">Get Started</a>
           </div>
 
           <!-- Abstract Background Elements -->
@@ -915,35 +915,8 @@
         <div class="row g-4 g-lg-5">
           <div class="col-12">
             <div id="student-gallery-slider" class="carousel slide" data-bs-ride="carousel">
-              <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                  <div class="row">
-                    <div class="col-4">
-                      <img src="https://i.postimg.cc/26BNfxCb/img-2.jpg" class="d-block w-100" alt="Student Artwork 1">
-                    </div>
-                    <div class="col-4">
-                      <img src="https://i.postimg.cc/nLrt3J51/img-3.jpg" class="d-block w-100" alt="Student Artwork 2">
-                    </div>
-                    <div class="col-4">
-                      <img src="https://i.postimg.cc/W4ycKycc/img-5.jpg" class="d-block w-100" alt="Student Artwork 3">
-                    </div>
-                  </div>
-                </div>
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                  <div class="row">
-                    <div class="col-4">
-                      <img src="https://i.postimg.cc/Hkc10GLM/IMG-20241104-WA0023.jpg" class="d-block w-100" alt="Student Artwork 4">
-                    </div>
-                    <div class="col-4">
-                      <img src="https://i.postimg.cc/8Pc2D8MY/IMG-20241104-WA0159.jpg" class="d-block w-100" alt="Student Artwork 5">
-                    </div>
-                    <div class="col-4">
-                      <img src="https://i.postimg.cc/mrfJQtJx/IMG-20241104-WA0163.jpg" class="d-block w-100" alt="Student Artwork 6">
-                    </div>
-                  </div>
-                </div>
+              <div class="carousel-inner" id="carousel-items">
+                <!-- Carousel items will be populated dynamically -->
               </div>
               <button class="carousel-control-prev" type="button" data-bs-target="#student-gallery-slider" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -960,19 +933,10 @@
 
       <!-- View More Button -->
       <div class="container text-center mt-4">
-        <a href="#" class="btn">Explore More</a>
+        <a href="gallery.html" class="btn">Explore More</a>
       </div>
 
     </section><!-- End Student Gallery Section -->
-
-    <!-- Inline Script for Slow Slide Effect -->
-    <script>
-      var myCarousel = document.querySelector('#student-gallery-slider');
-      var carousel = new bootstrap.Carousel(myCarousel, {
-        interval: 3000,  // Slide every 3 seconds
-        ride: 'carousel'
-      });
-    </script>
 
 
 
@@ -1162,6 +1126,47 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+
+  <!-- Inline Script for Slow Slide Effect -->
+  <script>
+    var myCarousel = document.querySelector('#student-gallery-slider');
+    var carousel = new bootstrap.Carousel(myCarousel, {
+      interval: 3000,  // Slide every 3 seconds
+      ride: 'carousel'
+    });
+  </script>
+
+
+  <script>
+    // Function to fetch images from images.json and populate carousel
+    fetch('images.json')
+            .then(response => response.json())
+            .then(data => {
+              const carouselItems = document.getElementById('carousel-items');
+              let imagesHTML = '';
+
+              // Loop through the images and group them in sets of 3
+              for (let i = 0; i < data.images.length; i += 3) {
+                const slideImages = data.images.slice(i, i + 3); // Get 3 images for each slide
+                imagesHTML += `<div class="carousel-item ${i === 0 ? 'active' : ''}">
+                          <div class="row">
+                            ${slideImages.map(image => `
+                              <div class="col-4">
+                                <img src="${image.src}" alt="${image.alt}" class="d-block w-100">
+                              </div>
+                            `).join('')}
+                          </div>
+                        </div>`;
+              }
+
+              // Add the generated HTML to the carousel
+              carouselItems.innerHTML = imagesHTML;
+            })
+            .catch(error => console.error('Error loading images:', error));
+  </script>
+
+
 
 </body>
 

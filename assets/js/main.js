@@ -1,12 +1,12 @@
 /**
-* Template Name: iLanding
-* Template URL: https://bootstrapmade.com/ilanding-bootstrap-landing-page-template/
-* Updated: Nov 12 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
+ * Template Name: iLanding
+ * Template URL: https://bootstrapmade.com/ilanding-bootstrap-landing-page-template/
+ * Updated: Nov 12 2024 with Bootstrap v5.3.3
+ * Author: BootstrapMade.com
+ * License: https://bootstrapmade.com/license/
+ */
 
-(function() {
+(function () {
   "use strict";
 
   /**
@@ -32,6 +32,7 @@
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
   }
+
   if (mobileNavToggleBtn) {
     mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
   }
@@ -52,7 +53,7 @@
    * Toggle mobile nav dropdowns
    */
   document.querySelectorAll('.navmenu .toggle-dropdown').forEach(navmenu => {
-    navmenu.addEventListener('click', function(e) {
+    navmenu.addEventListener('click', function (e) {
       e.preventDefault();
       this.parentNode.classList.toggle('active');
       this.parentNode.nextElementSibling.classList.toggle('dropdown-active');
@@ -70,6 +71,7 @@
       window.scrollY > 100 ? scrollTop.classList.add('active') : scrollTop.classList.remove('active');
     }
   }
+
   scrollTop.addEventListener('click', (e) => {
     e.preventDefault();
     window.scrollTo({
@@ -92,6 +94,7 @@
       mirror: false
     });
   }
+
   window.addEventListener('load', aosInit);
 
   /**
@@ -105,9 +108,9 @@
    * Init swiper sliders
    */
   function initSwiper() {
-    document.querySelectorAll(".init-swiper").forEach(function(swiperElement) {
+    document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
       let config = JSON.parse(
-        swiperElement.querySelector(".swiper-config").innerHTML.trim()
+          swiperElement.querySelector(".swiper-config").innerHTML.trim()
       );
 
       if (swiperElement.classList.contains("swiper-tab")) {
@@ -137,7 +140,7 @@
   /**
    * Correct scrolling position upon page load for URLs containing hash links.
    */
-  window.addEventListener('load', function(e) {
+  window.addEventListener('load', function (e) {
     if (window.location.hash) {
       if (document.querySelector(window.location.hash)) {
         setTimeout(() => {
@@ -171,7 +174,33 @@
       }
     })
   }
+
   window.addEventListener('load', navmenuScrollspy);
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+
+function showGallery(type) {
+  // Hide all tab contents
+  document.querySelectorAll('.gallery-tab-content').forEach(function (tab) {
+    tab.style.display = 'none';
+  });
+
+  // Remove active class from all tabs
+  document.querySelectorAll('.tab-list li').forEach(function (tab) {
+    tab.classList.remove('active');
+  });
+
+  // Show the selected tab content and add active class
+  document.getElementById(type).style.display = 'block';
+  document.querySelector(`[onclick="showGallery('${type}')"]`).classList.add('active');
+}
+
+// Initialize with images tab displayed
+document.addEventListener('DOMContentLoaded', function () {
+  showGallery('images');
+});
+
+
+
