@@ -1,4 +1,3 @@
-
 /* Fonts */
 :root {
   --default-font: "Roboto",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -541,6 +540,10 @@ h6 {
   color: color-mix(in srgb, var(--default-color), transparent 30%);
   display: inline-block;
   line-height: 1;
+}
+
+.footer .footer-links ul a:hover {
+  color: var(--accent-color);
 }
 
 .footer .footer-links ul a:hover {
@@ -2393,6 +2396,92 @@ section,
   }
 }
 
+/* Video Background Styles */
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.video-background video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.hero .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-text {
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.hero-text .text-primary {
+  color: var(--primary-color) !important;
+}
+
+.hero-text p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons .btn {
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-text p {
+    font-size: 1.2rem;
+  }
+  
+  .hero-buttons .btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
 .video-wrapper {
   width: calc(33.33% - 10px); /* Default for larger screens */
   height: 220px;
@@ -2454,8 +2543,6 @@ section,
     height: auto;
   }
 }
-
-
 
 /*--------------------------------------------------------------
 # Starter Section Section
