@@ -62,6 +62,55 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
+
+<style>
+.video-background-container {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+.video-background-container .video-background {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+.video-background-container .video-background iframe {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  border: none;
+}
+.hero.section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #000;
+}
+</style>
+
+<style>
+.video-overlay-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+.video-overlay-content .accent-text {
+  color: #ffd700;
+}
+</style>
 </head>
 
 <body class="index-page">
@@ -118,9 +167,7 @@
                 <span class="accent-text">Ibigwi Creative Academy</span>
               </h1>
 
-              <p class="mb-4 mb-md-5">
-                Transform your creative passion into a professional career with expert-led training in Rwanda.
-              </p>
+            
 
               <div class="hero-buttons">
                 <a href="#about" class="btn btn-primary me-0 me-sm-2 mx-1">Join Now</a>
@@ -133,102 +180,29 @@
           </div>
 
           <div class="col-lg-6">
-            <div class="hero-image" data-aos="zoom-out" data-aos-delay="300">
-              <!-- Image Carousel -->
-              <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="https://i.postimg.cc/8z1GrWm9/img-1.jpg" alt="Ibigwi Creative Studio" class="img-fluid">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="https://i.postimg.cc/26BNfxCb/img-2.jpg" alt="Ibigwi Creative Studio" class="img-fluid">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="https://i.postimg.cc/nLrt3J51/img-3.jpg" alt="Ibigwi Creative Studio" class="img-fluid">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="https://i.postimg.cc/dV4YR1W1/img-4.jpg" alt="Ibigwi Creative Studio" class="img-fluid">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="https://i.postimg.cc/W4ycKycc/img-5.jpg" alt="Ibigwi Creative Studio" class="img-fluid">
-                  </div>
-                </div>
-                <!-- Carousel Controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-              </div>
-
-              <!-- Customers Badge -->
-              <div class="customers-badge mt-3">
-                <div class="customer-avatars">
-                  <img src="assets/img/avatar-1.webp" alt="Customer 1" class="avatar">
-                  <img src="assets/img/avatar-2.webp" alt="Customer 2" class="avatar">
-                  <img src="assets/img/avatar-3.webp" alt="Customer 3" class="avatar">
-                  <img src="assets/img/avatar-4.webp" alt="Customer 4" class="avatar">
-                  <img src="assets/img/avatar-5.webp" alt="Customer 5" class="avatar">
-                  <span class="avatar more">12K+</span>
-                </div>
-                <p class="mb-0 mt-2">12,000+ students enrolled.</p>
-              </div>
-            </div>
-          </div>
+            
+<div class="hero-image video-background-container" data-aos="zoom-out" data-aos-delay="300">
+  <div class="video-background">
+    <iframe 
+      src="https://www.youtube.com/embed/pJvcBjVVTcY?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=pJvcBjVVTcY"
+      title="Ibigwi Creative Academy Video"
+      frameborder="0"
+      allow="autoplay; encrypted-media"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+<div class="video-overlay-content">
+  <div class="container text-center text-white">
+    
+  
+    <a href="https://forms.gle/MkphTZ6Ma2Qv5Sg18" class="btn btn-primary btn-lg me-2">Apply Now</a>
+    <a href="#about" class="btn btn-outline-light btn-lg">Learn More</a>
+  </div>
+</div>
 
 
-          <div class="row stats-row gy-4 mt-5" data-aos="fade-up" data-aos-delay="500">
-            <div class="col-lg-3 col-md-6">
-              <div class="stat-item">
-                <div class="stat-icon">
-                  <i class="bi bi-trophy"></i>
-                </div>
-                <div class="stat-content">
-                  <h4>5x Industry Awards</h4>
-                  <p class="mb-0">Recognizing excellence in creative arts</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-              <div class="stat-item">
-                <div class="stat-icon">
-                  <i class="bi bi-briefcase"></i>
-                </div>
-                <div class="stat-content">
-                  <h4>1,200+ Trained Creatives</h4>
-                  <p class="mb-0">Empowering Rwanda's creative talent</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-              <div class="stat-item">
-                <div class="stat-icon">
-                  <i class="bi bi-graph-up"></i>
-                </div>
-                <div class="stat-content">
-                  <h4>10k+ Projects Completed</h4>
-                  <p class="mb-0">Professional-grade portfolios created</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-              <div class="stat-item">
-                <div class="stat-icon">
-                  <i class="bi bi-award"></i>
-                </div>
-                <div class="stat-content">
-                  <h4>8+ Years of Experience</h4>
-                  <p class="mb-0">Leading creative education in Rwanda</p>
-                </div>
-              </div>
-            </div>
-          </div>
 
-
-        </div>
       </div>
 
     </section><!-- /Hero Section -->
