@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -91,6 +91,17 @@
   align-items: center;
   background-color: #000;
 }
+
+.video-background-container .video-tag {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
 </style>
 
 <style>
@@ -110,6 +121,17 @@
 .video-overlay-content .accent-text {
   color: #ffd700;
 }
+
+.video-background-container .video-tag {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+
 </style>
 </head>
 
@@ -167,7 +189,9 @@
                 <span class="accent-text">Ibigwi Creative Academy</span>
               </h1>
 
-            
+              <p class="mb-4 mb-md-5">
+                Transform your creative passion into a professional career with expert-led training in Rwanda.
+              </p>
 
               <div class="hero-buttons">
                 <a href="#about" class="btn btn-primary me-0 me-sm-2 mx-1">Join Now</a>
@@ -183,26 +207,75 @@
             
 <div class="hero-image video-background-container" data-aos="zoom-out" data-aos-delay="300">
   <div class="video-background">
-    <iframe 
-      src="https://www.youtube.com/embed/pJvcBjVVTcY?autoplay=1&mute=1&controls=0&showinfo=0&rel=0&loop=1&playlist=pJvcBjVVTcY"
-      title="Ibigwi Creative Academy Video"
-      frameborder="0"
-      allow="autoplay; encrypted-media"
-      allowfullscreen>
-    </iframe>
+    
+<video class="video-tag" autoplay muted loop playsinline>
+  <source src="assets/videos/ibigwi-creative-academy-cohort-one.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
   </div>
 </div>
 <div class="video-overlay-content">
   <div class="container text-center text-white">
-    
-  
+    <h1 class="display-4 fw-bold mb-3">Master Photography & Videography at <br><span class="accent-text">Ibigwi Creative Academy</span></h1>
+    <p class="lead mb-4">Transform your creative passion into a professional career with expert-led training in Rwanda.</p>
     <a href="https://forms.gle/MkphTZ6Ma2Qv5Sg18" class="btn btn-primary btn-lg me-2">Apply Now</a>
     <a href="#about" class="btn btn-outline-light btn-lg">Learn More</a>
   </div>
 </div>
 
+    
 
 
+          <div class="row stats-row gy-4 mt-5" data-aos="fade-up" data-aos-delay="500">
+            <div class="col-lg-3 col-md-6">
+              <div class="stat-item">
+                <div class="stat-icon">
+                  <i class="bi bi-trophy"></i>
+                </div>
+                <div class="stat-content">
+                  <h4>5x Industry Awards</h4>
+                  <p class="mb-0">Recognizing excellence in creative arts</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="stat-item">
+                <div class="stat-icon">
+                  <i class="bi bi-briefcase"></i>
+                </div>
+                <div class="stat-content">
+                  <h4>1,200+ Trained Creatives</h4>
+                  <p class="mb-0">Empowering Rwanda's creative talent</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="stat-item">
+                <div class="stat-icon">
+                  <i class="bi bi-graph-up"></i>
+                </div>
+                <div class="stat-content">
+                  <h4>10k+ Projects Completed</h4>
+                  <p class="mb-0">Professional-grade portfolios created</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="stat-item">
+                <div class="stat-icon">
+                  <i class="bi bi-award"></i>
+                </div>
+                <div class="stat-content">
+                  <h4>8+ Years of Experience</h4>
+                  <p class="mb-0">Leading creative education in Rwanda</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
       </div>
 
     </section><!-- /Hero Section -->
